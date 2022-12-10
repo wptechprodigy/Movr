@@ -20,49 +20,19 @@ class LoginViewController: UIViewController {
     }()
     
     private lazy var emailContainerView: UIView = {
-        let view = UIView()
-        
-        let imageView = UIImageView(image: .init(systemName: "envelope"))
-        imageView.tintColor = .lightGray
-        imageView.alpha = 0.87
-        
-        view.addSubview(imageView)
-        imageView.centerY(inView: view)
-        imageView.anchor(left: view.leftAnchor, paddingLeft: 8, width: 24, height: 24)
-        
-        view.addSubview(emailTextField)
-        emailTextField.centerY(inView: view)
-        emailTextField.anchor(left: imageView.rightAnchor, paddingLeft: 8)
-        
-        let separatorView = UIView()
-        separatorView.backgroundColor = .lightGray
-        view.addSubview(separatorView)
-        separatorView.anchor(right: view.rightAnchor, bottom: view.bottomAnchor, left: view.leftAnchor, paddingRight: 8, paddingLeft: 8, height: 0.75)
-        
-        return view
+        return UIView
+            .inputContainerView(
+                withImage: "envelope",
+                and: emailTextField
+            )
     }()
     
     private lazy var passwordContainerView: UIView = {
-        let view = UIView()
-        
-        let imageView = UIImageView(image: .init(systemName: "lock"))
-        imageView.tintColor = .lightGray
-        imageView.alpha = 0.87
-        
-        view.addSubview(imageView)
-        imageView.centerY(inView: view)
-        imageView.anchor(left: view.leftAnchor, paddingLeft: 8, width: 24, height: 24)
-        
-        view.addSubview(passwordTextField)
-        passwordTextField.centerY(inView: view)
-        passwordTextField.anchor(left: imageView.rightAnchor, paddingLeft: 8)
-        
-        let separatorView = UIView()
-        separatorView.backgroundColor = .lightGray
-        view.addSubview(separatorView)
-        separatorView.anchor(right: view.rightAnchor, bottom: view.bottomAnchor, left: view.leftAnchor, paddingRight: 8, paddingLeft: 8, height: 0.75)
-        
-        return view
+        return UIView
+            .inputContainerView(
+                withImage: "lock",
+                and: passwordTextField
+            )
     }()
     
     private let emailTextField: UITextField = {
@@ -70,7 +40,8 @@ class LoginViewController: UIViewController {
     }()
     
     private let passwordTextField: UITextField = {
-        return UITextField.textfield(withPlaceholder: "Password", isSecureTextEntry: true)
+        return UITextField.textfield(withPlaceholder: "Password",
+                                     isSecureTextEntry: true)
     }()
     
     // MARK: - Lifecycle
