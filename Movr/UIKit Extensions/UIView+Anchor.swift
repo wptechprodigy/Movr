@@ -15,9 +15,9 @@ extension UIView {
         bottom: NSLayoutYAxisAnchor? = nil,
         left: NSLayoutXAxisAnchor? = nil,
         paddingTop: CGFloat = 0,
-        paddingLeft: CGFloat = 0,
-        paddingBottom: CGFloat = 0,
         paddingRight: CGFloat = 0,
+        paddingBottom: CGFloat = 0,
+        paddingLeft: CGFloat = 0,
         width: CGFloat? = nil,
         height: CGFloat? = nil
     ) {
@@ -50,5 +50,13 @@ extension UIView {
     
     func centerX(inView view: UIView) {
         centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    }
+    
+    func centerY(inView view: UIView) {
+        centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    }
+    
+    func height(ofSize size: CGFloat) {
+        heightAnchor.constraint(equalToConstant: size).isActive = true
     }
 }

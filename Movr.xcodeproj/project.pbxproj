@@ -56,10 +56,10 @@
 		04A5C2E42940C3FF0045664D /* Movr */ = {
 			isa = PBXGroup;
 			children = (
-				04A5C300294121F10045664D /* Application Delegates */,
 				04A5C2F32940C4020045664D /* Info.plist */,
-				04A5C305294122A70045664D /* Resources */,
 				04A5C2FF294121E80045664D /* Screens */,
+				04A5C300294121F10045664D /* Application Delegates */,
+				04A5C305294122A70045664D /* Resources */,
 				04A5C2FC294121D80045664D /* UIKit Extensions */,
 				04A5C2FE294121E70045664D /* Utils */,
 			);
