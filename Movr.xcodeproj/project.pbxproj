@@ -13,6 +13,7 @@
 		04A5C2EF2940C4020045664D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04A5C2EE2940C4020045664D /* Assets.xcassets */; };
 		04A5C2F22940C4020045664D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A5C2F02940C4020045664D /* LaunchScreen.storyboard */; };
 		04A5C308294123340045664D /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A5C307294123340045664D /* UIView+Anchor.swift */; };
+		04FC02872944F7510055C0F8 /* UITextField+textfieldWithPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC02862944F7510055C0F8 /* UITextField+textfieldWithPlaceholder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		04A5C2F12940C4020045664D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04A5C2F32940C4020045664D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04A5C307294123340045664D /* UIView+Anchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
+		04FC02862944F7510055C0F8 /* UITextField+textfieldWithPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+textfieldWithPlaceholder.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				04A5C307294123340045664D /* UIView+Anchor.swift */,
+				04FC02862944F7510055C0F8 /* UITextField+textfieldWithPlaceholder.swift */,
 			);
 			path = "UIKit Extensions";
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				04A5C308294123340045664D /* UIView+Anchor.swift in Sources */,
 				04A5C2E62940C3FF0045664D /* AppDelegate.swift in Sources */,
 				04A5C2E82940C3FF0045664D /* SceneDelegate.swift in Sources */,
+				04FC02872944F7510055C0F8 /* UITextField+textfieldWithPlaceholder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

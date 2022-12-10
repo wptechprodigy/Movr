@@ -66,26 +66,11 @@ class LoginViewController: UIViewController {
     }()
     
     private let emailTextField: UITextField = {
-        let textField = UITextField()
-        
-        textField.borderStyle = .none
-        textField.font = UIFont.systemFont(ofSize: 16)
-        textField.textColor = .white
-        textField.keyboardAppearance = .dark
-        textField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray])
-        return textField
+        return UITextField.textfield(withPlaceholder: "Email")
     }()
     
     private let passwordTextField: UITextField = {
-        let textField = UITextField()
-        
-        textField.borderStyle = .none
-        textField.font = UIFont.systemFont(ofSize: 16)
-        textField.textColor = .white
-        textField.keyboardAppearance = .dark
-        textField.isSecureTextEntry = true
-        textField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray])
-        return textField
+        return UITextField.textfield(withPlaceholder: "Password", isSecureTextEntry: true)
     }()
     
     // MARK: - Lifecycle
@@ -104,7 +89,7 @@ class LoginViewController: UIViewController {
         
         emailContainerView.anchor(top: titleLabel.bottomAnchor, right: view.rightAnchor, left: view.leftAnchor, paddingTop: 40, paddingRight: 16, paddingLeft: 16, height: 50)
         
-        passwordContainerView.anchor(top: emailContainerView.bottomAnchor, right: view.rightAnchor, left: view.leftAnchor, paddingTop: 8, paddingRight: 16, paddingLeft: 16, height: 50)
+        passwordContainerView.anchor(top: emailContainerView.bottomAnchor, right: view.rightAnchor, left: view.leftAnchor, paddingTop: 16, paddingRight: 16, paddingLeft: 16, height: 50)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
