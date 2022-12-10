@@ -9,6 +9,11 @@ import UIKit
 
 extension UITextField {
     
+    /// Creates a text field with placeholder text
+    /// - Parameters:
+    ///   - placeholder: placeholder text
+    ///   - isSecureTextEntry: true or false incase it's a password field
+    /// - Returns: textfield object
     static func textfield(withPlaceholder placeholder: String, isSecureTextEntry: Bool = false) -> UITextField {
         let textField = UITextField()
         
