@@ -21,7 +21,6 @@ class LoginViewController: UIViewController {
     
     private lazy var emailContainerView: UIView = {
         let view = UIView()
-        view.height(ofSize: 50)
         
         let imageView = UIImageView(image: .init(systemName: "envelope"))
         imageView.tintColor = .lightGray
@@ -29,11 +28,39 @@ class LoginViewController: UIViewController {
         
         view.addSubview(imageView)
         imageView.centerY(inView: view)
-        imageView.anchor(left: view.leftAnchor, paddingLeft: 8)
+        imageView.anchor(left: view.leftAnchor, paddingLeft: 8, width: 24, height: 24)
         
         view.addSubview(emailTextField)
         emailTextField.centerY(inView: view)
         emailTextField.anchor(left: imageView.rightAnchor, paddingLeft: 8)
+        
+        let separatorView = UIView()
+        separatorView.backgroundColor = .lightGray
+        view.addSubview(separatorView)
+        separatorView.anchor(right: view.rightAnchor, bottom: view.bottomAnchor, left: view.leftAnchor, paddingRight: 8, paddingLeft: 8, height: 0.75)
+        
+        return view
+    }()
+    
+    private lazy var passwordContainerView: UIView = {
+        let view = UIView()
+        
+        let imageView = UIImageView(image: .init(systemName: "lock"))
+        imageView.tintColor = .lightGray
+        imageView.alpha = 0.87
+        
+        view.addSubview(imageView)
+        imageView.centerY(inView: view)
+        imageView.anchor(left: view.leftAnchor, paddingLeft: 8, width: 24, height: 24)
+        
+        view.addSubview(passwordTextField)
+        passwordTextField.centerY(inView: view)
+        passwordTextField.anchor(left: imageView.rightAnchor, paddingLeft: 8)
+        
+        let separatorView = UIView()
+        separatorView.backgroundColor = .lightGray
+        view.addSubview(separatorView)
+        separatorView.anchor(right: view.rightAnchor, bottom: view.bottomAnchor, left: view.leftAnchor, paddingRight: 8, paddingLeft: 8, height: 0.75)
         
         return view
     }()
@@ -49,6 +76,18 @@ class LoginViewController: UIViewController {
         return textField
     }()
     
+    private let passwordTextField: UITextField = {
+        let textField = UITextField()
+        
+        textField.borderStyle = .none
+        textField.font = UIFont.systemFont(ofSize: 16)
+        textField.textColor = .white
+        textField.keyboardAppearance = .dark
+        textField.isSecureTextEntry = true
+        textField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray])
+        return textField
+    }()
+    
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -58,11 +97,14 @@ class LoginViewController: UIViewController {
         
         view.addSubview(titleLabel)
         view.addSubview(emailContainerView)
+        view.addSubview(passwordContainerView)
         
         titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor)
         titleLabel.centerX(inView: view)
         
-        emailContainerView.anchor(top: titleLabel.bottomAnchor, right: view.rightAnchor, left: view.leftAnchor, paddingTop: 20, paddingRight: 16, paddingLeft: 16)
+        emailContainerView.anchor(top: titleLabel.bottomAnchor, right: view.rightAnchor, left: view.leftAnchor, paddingTop: 40, paddingRight: 16, paddingLeft: 16, height: 50)
+        
+        passwordContainerView.anchor(top: emailContainerView.bottomAnchor, right: view.rightAnchor, left: view.leftAnchor, paddingTop: 8, paddingRight: 16, paddingLeft: 16, height: 50)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
