@@ -54,7 +54,8 @@ class LoginViewController: UIViewController {
         button.setTitle("Log In", for: .normal)
         button.setTitleColor(UIColor(white: 1, alpha: 0.8), for: .normal)
         button.layer.cornerRadius = 8
-        button.backgroundColor = .blue
+        button.backgroundColor = .mainBlueTintColor
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         return button
     }()
     
@@ -63,7 +64,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.init(red: 25/255, green: 25/255, blue: 25/255, alpha: 1.0)
+        view.backgroundColor = .backgroundColor
         
         view.addSubview(titleLabel)
         titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor)
