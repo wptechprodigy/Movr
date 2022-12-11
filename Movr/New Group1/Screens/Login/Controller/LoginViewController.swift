@@ -20,19 +20,23 @@ class LoginViewController: UIViewController {
     }()
     
     private lazy var emailContainerView: UIView = {
-        return UIView
+        let view = UIView
             .inputContainerView(
                 withImage: "envelope",
-                and: emailTextField
+                and: self.emailTextField
             )
+        view.height(ofSize: 50)
+        return view
     }()
     
     private lazy var passwordContainerView: UIView = {
-        return UIView
+        let view = UIView
             .inputContainerView(
                 withImage: "lock",
-                and: passwordTextField
+                and: self.passwordTextField
             )
+        view.height(ofSize: 50)
+        return view
     }()
     
     private let emailTextField: UITextField = {
@@ -44,6 +48,16 @@ class LoginViewController: UIViewController {
                                      isSecureTextEntry: true)
     }()
     
+    private let loginButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.height(ofSize: 50)
+        button.setTitle("Log In", for: .normal)
+        button.setTitleColor(UIColor(white: 1, alpha: 0.8), for: .normal)
+        button.layer.cornerRadius = 8
+        button.backgroundColor = .blue
+        return button
+    }()
+    
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -52,18 +66,29 @@ class LoginViewController: UIViewController {
         view.backgroundColor = UIColor.init(red: 25/255, green: 25/255, blue: 25/255, alpha: 1.0)
         
         view.addSubview(titleLabel)
-        view.addSubview(emailContainerView)
-        view.addSubview(passwordContainerView)
-        
         titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor)
         titleLabel.centerX(inView: view)
         
-        emailContainerView.anchor(top: titleLabel.bottomAnchor, right: view.rightAnchor, left: view.leftAnchor, paddingTop: 40, paddingRight: 16, paddingLeft: 16, height: 50)
-        
-        passwordContainerView.anchor(top: emailContainerView.bottomAnchor, right: view.rightAnchor, left: view.leftAnchor, paddingTop: 16, paddingRight: 16, paddingLeft: 16, height: 50)
+        stackInputContainers(in: view)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    private func stackInputContainers(in view: UIView) {
+        let stack = UIStackView(
+            arrangedSubviews: [
+                emailContainerView,
+                passwordContainerView,
+                loginButton
+            ]
+        )
+        stack.axis = .vertical
+        stack.distribution = .fillEqually
+        stack.spacing = 24
+        
+        view.addSubview(stack)
+        stack.anchor(top: titleLabel.bottomAnchor, right: view.rightAnchor, left: view.leftAnchor, paddingTop: 40, paddingRight: 16, paddingLeft: 16)
     }
 }

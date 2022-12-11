@@ -55,4 +55,8 @@ extension UIView {
     func centerY(inView view: UIView) {
         centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
+    
+    func height(ofSize size: CGFloat) {
+        heightAnchor.constraint(equalToConstant: 50).isActive = true
+    }
 }
