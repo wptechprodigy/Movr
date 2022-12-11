@@ -15,6 +15,7 @@
 		04A5C308294123340045664D /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A5C307294123340045664D /* UIView+Anchor.swift */; };
 		04FC02872944F7510055C0F8 /* UITextField+textfieldWithPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC02862944F7510055C0F8 /* UITextField+textfieldWithPlaceholder.swift */; };
 		04FC02892944FA7A0055C0F8 /* UIView+InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC02882944FA7A0055C0F8 /* UIView+InputContainerView.swift */; };
+		04FC028B2945C8330055C0F8 /* UIColor+MovrColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC028A2945C8330055C0F8 /* UIColor+MovrColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		04A5C307294123340045664D /* UIView+Anchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
 		04FC02862944F7510055C0F8 /* UITextField+textfieldWithPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+textfieldWithPlaceholder.swift"; sourceTree = "<group>"; };
 		04FC02882944FA7A0055C0F8 /* UIView+InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+InputContainerView.swift"; sourceTree = "<group>"; };
+		04FC028A2945C8330055C0F8 /* UIColor+MovrColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+MovrColors.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				04A5C307294123340045664D /* UIView+Anchor.swift */,
 				04FC02862944F7510055C0F8 /* UITextField+textfieldWithPlaceholder.swift */,
 				04FC02882944FA7A0055C0F8 /* UIView+InputContainerView.swift */,
+				04FC028A2945C8330055C0F8 /* UIColor+MovrColors.swift */,
 			);
 			path = "UIKit Extensions";
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04A5C2EA2940C3FF0045664D /* LoginViewController.swift in Sources */,
+				04FC028B2945C8330055C0F8 /* UIColor+MovrColors.swift in Sources */,
 				04A5C308294123340045664D /* UIView+Anchor.swift in Sources */,
 				04A5C2E62940C3FF0045664D /* AppDelegate.swift in Sources */,
 				04A5C2E82940C3FF0045664D /* SceneDelegate.swift in Sources */,
