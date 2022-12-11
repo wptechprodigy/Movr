@@ -59,6 +59,28 @@ class LoginViewController: UIViewController {
         return button
     }()
     
+    private let dontHaveAnAccountButton: UIButton = {
+        let button = UIButton(type: .system)
+        let attributedTitle = NSMutableAttributedString(
+            string: "Don't have an account? ",
+            attributes: [
+                NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14),
+                NSAttributedString.Key.foregroundColor: UIColor.lightGray
+            ]
+        )
+        attributedTitle.append(
+            NSAttributedString(
+                string: "Sign Up",
+                attributes: [
+                    NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14),
+                    NSAttributedString.Key.foregroundColor: UIColor.mainBlueTintColor
+                ]
+            )
+        )
+        button.setAttributedTitle(attributedTitle, for: .normal)
+        return button
+    }()
+    
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -71,6 +93,7 @@ class LoginViewController: UIViewController {
         titleLabel.centerX(inView: view)
         
         stackInputContainers(in: view)
+        layoutDontHaveAnAccountButton()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -91,5 +114,11 @@ class LoginViewController: UIViewController {
         
         view.addSubview(stack)
         stack.anchor(top: titleLabel.bottomAnchor, right: view.rightAnchor, left: view.leftAnchor, paddingTop: 40, paddingRight: 16, paddingLeft: 16)
+    }
+    
+    private func layoutDontHaveAnAccountButton() {
+        view.addSubview(dontHaveAnAccountButton)
+        dontHaveAnAccountButton.centerX(inView: view)
+        dontHaveAnAccountButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, height: 32)
     }
 }
