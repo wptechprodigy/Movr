@@ -59,7 +59,7 @@ class LoginViewController: UIViewController {
         return button
     }()
     
-    private let dontHaveAnAccountButton: UIButton = {
+    private lazy var dontHaveAnAccountButton: UIButton = {
         let button = UIButton(type: .system)
         let attributedTitle = NSMutableAttributedString(
             string: "Don't have an account? ",
@@ -77,27 +77,44 @@ class LoginViewController: UIViewController {
                 ]
             )
         )
+        button.addTarget(self, action: #selector(didTapSignUp), for: .touchUpInside)
         button.setAttributedTitle(attributedTitle, for: .normal)
         return button
     }()
     
     // MARK: - Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configureUI()
+    }
+    
+    // MARK: - Selectors
+    
+    @objc private func didTapSignUp(_ sender: UIButton) {
+        let signUpViewController = SignUpViewController()
+        navigationController?.pushViewController(signUpViewController, animated: true)
+    }
+    
+    // MARK: - Helper Methods
+    
+    private func configureUI() {
         view.backgroundColor = .backgroundColor
-        
-        view.addSubview(titleLabel)
-        titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor)
-        titleLabel.centerX(inView: view)
-        
+        configureNavigationBar()
+        layoutLoginTitle()
         stackInputContainers(in: view)
         layoutDontHaveAnAccountButton()
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+    private func configureNavigationBar() {
+        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.barStyle = .black
+    }
+    
+    fileprivate func layoutLoginTitle() {
+        view.addSubview(titleLabel)
+        titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor)
+        titleLabel.centerX(inView: view)
     }
     
     private func stackInputContainers(in view: UIView) {

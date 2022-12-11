@@ -16,6 +16,7 @@
 		04FC02872944F7510055C0F8 /* UITextField+textfieldWithPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC02862944F7510055C0F8 /* UITextField+textfieldWithPlaceholder.swift */; };
 		04FC02892944FA7A0055C0F8 /* UIView+InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC02882944FA7A0055C0F8 /* UIView+InputContainerView.swift */; };
 		04FC028B2945C8330055C0F8 /* UIColor+MovrColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC028A2945C8330055C0F8 /* UIColor+MovrColors.swift */; };
+		04FC028E2945DA5C0055C0F8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC028D2945DA5C0055C0F8 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		04FC02862944F7510055C0F8 /* UITextField+textfieldWithPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+textfieldWithPlaceholder.swift"; sourceTree = "<group>"; };
 		04FC02882944FA7A0055C0F8 /* UIView+InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+InputContainerView.swift"; sourceTree = "<group>"; };
 		04FC028A2945C8330055C0F8 /* UIColor+MovrColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+MovrColors.swift"; sourceTree = "<group>"; };
+		04FC028D2945DA5C0055C0F8 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		04A5C2FF294121E80045664D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				04FC028C2945D9870055C0F8 /* SignUp */,
 				04A5C306294122D20045664D /* Launch */,
 				04A5C3012941224B0045664D /* Login */,
 			);
@@ -155,6 +158,14 @@
 				04A5C2F02940C4020045664D /* LaunchScreen.storyboard */,
 			);
 			path = Launch;
+			sourceTree = "<group>";
+		};
+		04FC028C2945D9870055C0F8 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				04FC028D2945DA5C0055C0F8 /* SignUpViewController.swift */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +240,7 @@
 			files = (
 				04A5C2EA2940C3FF0045664D /* LoginViewController.swift in Sources */,
 				04FC028B2945C8330055C0F8 /* UIColor+MovrColors.swift in Sources */,
+				04FC028E2945DA5C0055C0F8 /* SignUpViewController.swift in Sources */,
 				04A5C308294123340045664D /* UIView+Anchor.swift in Sources */,
 				04A5C2E62940C3FF0045664D /* AppDelegate.swift in Sources */,
 				04A5C2E82940C3FF0045664D /* SceneDelegate.swift in Sources */,
