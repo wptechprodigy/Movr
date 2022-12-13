@@ -135,7 +135,7 @@ class SignUpViewController: UIViewController {
                 password: password
             ) { (result, error) in
                 if let error = error {
-                    print("Failed to register user with error: \(error.localizedDescription)")
+                    print("DEBUG: Failed to register user with error: \(error.localizedDescription)")
                     return
                 }
                 
