@@ -17,6 +17,10 @@
 		04FC02892944FA7A0055C0F8 /* UIView+InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC02882944FA7A0055C0F8 /* UIView+InputContainerView.swift */; };
 		04FC028B2945C8330055C0F8 /* UIColor+MovrColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC028A2945C8330055C0F8 /* UIColor+MovrColors.swift */; };
 		04FC028E2945DA5C0055C0F8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC028D2945DA5C0055C0F8 /* SignUpViewController.swift */; };
+		04FC0296294623D50055C0F8 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC0295294623D50055C0F8 /* AuthButton.swift */; };
+		04FC02992946251E0055C0F8 /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC02982946251E0055C0F8 /* TitleLabel.swift */; };
+		04FC02A52947DCFC0055C0F8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04FC02A42947DCFC0055C0F8 /* GoogleService-Info.plist */; };
+		857BCA5AB7E9D405E6AFC709 /* Pods_Movr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3486F5610725FE7E4383B0 /* Pods_Movr.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,12 @@
 		04FC02882944FA7A0055C0F8 /* UIView+InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+InputContainerView.swift"; sourceTree = "<group>"; };
 		04FC028A2945C8330055C0F8 /* UIColor+MovrColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+MovrColors.swift"; sourceTree = "<group>"; };
 		04FC028D2945DA5C0055C0F8 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		04FC0295294623D50055C0F8 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
+		04FC02982946251E0055C0F8 /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
+		04FC02A42947DCFC0055C0F8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Movr/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		BE3486F5610725FE7E4383B0 /* Pods_Movr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Movr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF73CB9E592E92CB64C6A6D3 /* Pods-Movr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movr.debug.xcconfig"; path = "Target Support Files/Pods-Movr/Pods-Movr.debug.xcconfig"; sourceTree = "<group>"; };
+		E8CF2218EAC8E8D8F951FF80 /* Pods-Movr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movr.release.xcconfig"; path = "Target Support Files/Pods-Movr/Pods-Movr.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				857BCA5AB7E9D405E6AFC709 /* Pods_Movr.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +61,8 @@
 			children = (
 				04A5C2E42940C3FF0045664D /* Movr */,
 				04A5C2E32940C3FF0045664D /* Products */,
+				27BD6D7CEE271A8AD3E8F10D /* Pods */,
+				492716DDDA16469073D4920E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,11 +77,13 @@
 		04A5C2E42940C3FF0045664D /* Movr */ = {
 			isa = PBXGroup;
 			children = (
+				04FC02A42947DCFC0055C0F8 /* GoogleService-Info.plist */,
 				04A5C2F32940C4020045664D /* Info.plist */,
 				04A5C2FF294121E80045664D /* Screens */,
 				04A5C300294121F10045664D /* Application Delegates */,
 				04A5C305294122A70045664D /* Resources */,
 				04A5C2FC294121D80045664D /* UIKit Extensions */,
+				04FC02902946236A0055C0F8 /* UIKit Subclass */,
 				04A5C2FE294121E70045664D /* Utils */,
 			);
 			path = Movr;
@@ -77,10 +92,9 @@
 		04A5C2FC294121D80045664D /* UIKit Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				04A5C307294123340045664D /* UIView+Anchor.swift */,
-				04FC02862944F7510055C0F8 /* UITextField+textfieldWithPlaceholder.swift */,
-				04FC02882944FA7A0055C0F8 /* UIView+InputContainerView.swift */,
-				04FC028A2945C8330055C0F8 /* UIColor+MovrColors.swift */,
+				04FC02912946238B0055C0F8 /* UIView */,
+				04FC0292294623980055C0F8 /* UITextField */,
+				04FC0293294623A60055C0F8 /* UIColor */,
 			);
 			path = "UIKit Extensions";
 			sourceTree = "<group>";
@@ -99,8 +113,7 @@
 				04A5C306294122D20045664D /* Launch */,
 				04A5C3012941224B0045664D /* Login */,
 			);
-			name = Screens;
-			path = "New Group1/Screens";
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		04A5C300294121F10045664D /* Application Delegates */ = {
@@ -163,9 +176,84 @@
 		04FC028C2945D9870055C0F8 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				04FC028D2945DA5C0055C0F8 /* SignUpViewController.swift */,
+				04FC028F2945DD240055C0F8 /* Controller */,
 			);
 			path = SignUp;
+			sourceTree = "<group>";
+		};
+		04FC028F2945DD240055C0F8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04FC028D2945DA5C0055C0F8 /* SignUpViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04FC02902946236A0055C0F8 /* UIKit Subclass */ = {
+			isa = PBXGroup;
+			children = (
+				04FC0297294624FD0055C0F8 /* UILabel */,
+				04FC0294294623B40055C0F8 /* UIButton */,
+			);
+			path = "UIKit Subclass";
+			sourceTree = "<group>";
+		};
+		04FC02912946238B0055C0F8 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				04A5C307294123340045664D /* UIView+Anchor.swift */,
+				04FC02882944FA7A0055C0F8 /* UIView+InputContainerView.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		04FC0292294623980055C0F8 /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				04FC02862944F7510055C0F8 /* UITextField+textfieldWithPlaceholder.swift */,
+			);
+			path = UITextField;
+			sourceTree = "<group>";
+		};
+		04FC0293294623A60055C0F8 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				04FC028A2945C8330055C0F8 /* UIColor+MovrColors.swift */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		04FC0294294623B40055C0F8 /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				04FC0295294623D50055C0F8 /* AuthButton.swift */,
+			);
+			path = UIButton;
+			sourceTree = "<group>";
+		};
+		04FC0297294624FD0055C0F8 /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				04FC02982946251E0055C0F8 /* TitleLabel.swift */,
+			);
+			path = UILabel;
+			sourceTree = "<group>";
+		};
+		27BD6D7CEE271A8AD3E8F10D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CF73CB9E592E92CB64C6A6D3 /* Pods-Movr.debug.xcconfig */,
+				E8CF2218EAC8E8D8F951FF80 /* Pods-Movr.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		492716DDDA16469073D4920E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE3486F5610725FE7E4383B0 /* Pods_Movr.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,15 +263,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04A5C2F62940C4020045664D /* Build configuration list for PBXNativeTarget "Movr" */;
 			buildPhases = (
+				811368E4F29461D7F85DCBE9 /* [CP] Check Pods Manifest.lock */,
 				04A5C2DE2940C3FF0045664D /* Sources */,
 				04A5C2DF2940C3FF0045664D /* Frameworks */,
 				04A5C2E02940C3FF0045664D /* Resources */,
+				1B44CA8A36779B6CCC926D03 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Movr;
+			packageProductDependencies = (
+			);
 			productName = Movr;
 			productReference = 04A5C2E22940C3FF0045664D /* Movr.app */;
 			productType = "com.apple.product-type.application";
@@ -212,6 +304,8 @@
 				Base,
 			);
 			mainGroup = 04A5C2D92940C3FF0045664D;
+			packageReferences = (
+			);
 			productRefGroup = 04A5C2E32940C3FF0045664D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -228,10 +322,53 @@
 			files = (
 				04A5C2F22940C4020045664D /* LaunchScreen.storyboard in Resources */,
 				04A5C2EF2940C4020045664D /* Assets.xcassets in Resources */,
+				04FC02A52947DCFC0055C0F8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1B44CA8A36779B6CCC926D03 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Movr/Pods-Movr-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Movr/Pods-Movr-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Movr/Pods-Movr-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		811368E4F29461D7F85DCBE9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Movr-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		04A5C2DE2940C3FF0045664D /* Sources */ = {
@@ -239,7 +376,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				04A5C2EA2940C3FF0045664D /* LoginViewController.swift in Sources */,
+				04FC0296294623D50055C0F8 /* AuthButton.swift in Sources */,
 				04FC028B2945C8330055C0F8 /* UIColor+MovrColors.swift in Sources */,
+				04FC02992946251E0055C0F8 /* TitleLabel.swift in Sources */,
 				04FC028E2945DA5C0055C0F8 /* SignUpViewController.swift in Sources */,
 				04A5C308294123340045664D /* UIView+Anchor.swift in Sources */,
 				04A5C2E62940C3FF0045664D /* AppDelegate.swift in Sources */,
@@ -379,6 +518,7 @@
 		};
 		04A5C2F72940C4020045664D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF73CB9E592E92CB64C6A6D3 /* Pods-Movr.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -408,6 +548,7 @@
 		};
 		04A5C2F82940C4020045664D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8CF2218EAC8E8D8F951FF80 /* Pods-Movr.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
