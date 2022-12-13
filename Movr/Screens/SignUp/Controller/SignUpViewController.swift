@@ -128,20 +128,34 @@ class SignUpViewController: UIViewController {
         }
         let accountTypeIndex = accountTypeSegmentedControl.selectedSegmentIndex
         
-        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
-            if let error = error {
-                print("Failed to register user with error: \(error.localizedDescription)")
-                return
+        Auth
+            .auth()
+            .createUser(
+                withEmail: email,
+                password: password
+            ) { (result, error) in
+                if let error = error {
+                    print("Failed to register user with error: \(error.localizedDescription)")
+                    return
+                }
+                
+                guard let uuid = result?.user.uid else { return }
+                
+                let userDetails: [String: Any] = [
+                    "email": email,
+                    "fullname": fullname,
+                    "accountType": accountTypeIndex
+                ]
+                
+                Database
+                    .database()
+                    .reference()
+                    .child("users")
+                    .child(uuid)
+                    .updateChildValues(userDetails) { error, ref in
+                        print("Successfully registered user and saved data.")
+                    }
             }
-            
-            guard let uuid = result?.user.uid else { return }
-            
-            let userDetails: [String: Any] = ["email": email, "fullname": fullname, "accountType": accountTypeIndex]
-            
-            Database.database().reference().child("users").child(uuid).updateChildValues(userDetails) { error, ref in
-                print("Successfully registered user and saved data.")
-            }
-        }
     }
     
     @objc private func didTapLogIn(_ sender: UIButton) {
