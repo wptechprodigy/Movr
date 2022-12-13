@@ -44,9 +44,10 @@ class LoginViewController: UIViewController {
                                      isSecureTextEntry: true)
     }()
     
-    private let loginButton: AuthButton = {
+    private lazy var loginButton: AuthButton = {
         let button = AuthButton(type: .system)
         button.setTitle("Log In", for: .normal)
+        button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         return button
     }()
     
@@ -81,6 +82,10 @@ class LoginViewController: UIViewController {
     }
     
     // MARK: - Selectors
+    
+    @objc private func handleLogin(_ sender: UIButton) {
+        print("Attempting to login...")
+    }
     
     @objc private func didTapSignUp(_ sender: UIButton) {
         let signUpViewController = SignUpViewController()
