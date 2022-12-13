@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
     
@@ -84,9 +85,26 @@ class LoginViewController: UIViewController {
     // MARK: - Selectors
     
     @objc private func handleLogin(_ sender: UIButton) {
-        print("Attempting to login...")
+        guard
+            let email = emailTextField.text,
+            let password = passwordTextField.text
+        else { return }
+            
+        Auth
+            .auth()
+            .signIn(
+                withEmail: email,
+                password: password
+            ) { (result, error) in
+                if let error = error {
+                    print("DEBUG: Failed to login in user with error: \(error.localizedDescription)")
+                    return
+                }
+                
+                // TODO: - User successfully signs in. Handle users next action
+            }
     }
-    
+
     @objc private func didTapSignUp(_ sender: UIButton) {
         let signUpViewController = SignUpViewController()
         navigationController?.pushViewController(signUpViewController, animated: true)
