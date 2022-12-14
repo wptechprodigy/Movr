@@ -20,6 +20,7 @@
 		04FC0296294623D50055C0F8 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC0295294623D50055C0F8 /* AuthButton.swift */; };
 		04FC02992946251E0055C0F8 /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC02982946251E0055C0F8 /* TitleLabel.swift */; };
 		04FC02A52947DCFC0055C0F8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04FC02A42947DCFC0055C0F8 /* GoogleService-Info.plist */; };
+		04FC02B22949299A0055C0F8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC02B12949299A0055C0F8 /* HomeViewController.swift */; };
 		857BCA5AB7E9D405E6AFC709 /* Pods_Movr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3486F5610725FE7E4383B0 /* Pods_Movr.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		04FC0295294623D50055C0F8 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		04FC02982946251E0055C0F8 /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
 		04FC02A42947DCFC0055C0F8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Movr/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		04FC02B12949299A0055C0F8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BE3486F5610725FE7E4383B0 /* Pods_Movr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Movr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF73CB9E592E92CB64C6A6D3 /* Pods-Movr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movr.debug.xcconfig"; path = "Target Support Files/Pods-Movr/Pods-Movr.debug.xcconfig"; sourceTree = "<group>"; };
 		E8CF2218EAC8E8D8F951FF80 /* Pods-Movr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movr.release.xcconfig"; path = "Target Support Files/Pods-Movr/Pods-Movr.release.xcconfig"; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 		04A5C2FF294121E80045664D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				04FC02AF2949296F0055C0F8 /* Home */,
 				04FC028C2945D9870055C0F8 /* SignUp */,
 				04A5C306294122D20045664D /* Launch */,
 				04A5C3012941224B0045664D /* Login */,
@@ -237,6 +240,22 @@
 				04FC02982946251E0055C0F8 /* TitleLabel.swift */,
 			);
 			path = UILabel;
+			sourceTree = "<group>";
+		};
+		04FC02AF2949296F0055C0F8 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				04FC02B0294929810055C0F8 /* Controller */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		04FC02B0294929810055C0F8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04FC02B12949299A0055C0F8 /* HomeViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		27BD6D7CEE271A8AD3E8F10D /* Pods */ = {
@@ -382,6 +401,7 @@
 				04FC028E2945DA5C0055C0F8 /* SignUpViewController.swift in Sources */,
 				04A5C308294123340045664D /* UIView+Anchor.swift in Sources */,
 				04A5C2E62940C3FF0045664D /* AppDelegate.swift in Sources */,
+				04FC02B22949299A0055C0F8 /* HomeViewController.swift in Sources */,
 				04A5C2E82940C3FF0045664D /* SceneDelegate.swift in Sources */,
 				04FC02892944FA7A0055C0F8 /* UIView+InputContainerView.swift in Sources */,
 				04FC02872944F7510055C0F8 /* UITextField+textfieldWithPlaceholder.swift in Sources */,
