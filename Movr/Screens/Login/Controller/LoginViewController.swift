@@ -101,7 +101,9 @@ class LoginViewController: UIViewController {
                     return
                 }
                 
-                // TODO: - User successfully signs in. Handle users next action
+                guard let controller = UIApplication.shared.keyWindow?.rootViewController as? HomeViewController else { return }
+                controller.configureUI()
+                self.dismiss(animated: true)
             }
     }
 

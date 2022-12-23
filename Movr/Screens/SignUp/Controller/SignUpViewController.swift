@@ -155,6 +155,7 @@ class SignUpViewController: UIViewController {
                     .updateChildValues(userDetails) { error, ref in
                         print("Successfully registered user and saved data.")
                     }
+                self.dismiss(animated: true)
             }
     }
     
