@@ -21,7 +21,6 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         checkIfUserIsLoggedIn()
 //        signOut()
-        view.backgroundColor = .cyan
     }
     
     // MARK: - API
