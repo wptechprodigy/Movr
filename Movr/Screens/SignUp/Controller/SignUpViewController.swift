@@ -155,6 +155,9 @@ class SignUpViewController: UIViewController {
                     .updateChildValues(userDetails) { error, ref in
                         print("Successfully registered user and saved data.")
                     }
+                
+                guard let controller = UIApplication.shared.keyWindow?.rootViewController as? HomeViewController else { return }
+                controller.configureUI()
                 self.dismiss(animated: true)
             }
     }
