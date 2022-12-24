@@ -1,5 +1,5 @@
 //
-//  UIView+AnimateIn.swift
+//  UIViewController+AnimateIn.swift
 //  Movr
 //
 //  Created by waheedCodes on 24/12/2022.

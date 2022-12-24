@@ -36,24 +36,47 @@ class LocationInputActivationView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Helper Methods
+    
     private func setUpSubviews() {
-        backgroundColor = .white
-        
-        setSelfAttributes()
-        alpha = 0
-        addSubview(indicatorView)
-        indicatorView.centerY(inView: self, leftAnchor: leftAnchor, paddingLeft: 16)
-        indicatorView.setDimensions(width: 6, height: 6)
-        
-        addSubview(placeholderLabel)
-        placeholderLabel.centerY(inView: self, leftAnchor: indicatorView.rightAnchor, paddingLeft: 20)
+        setUpSelfAttributes()
+        setUpIndicatorView()
+        setUpPlaceholderView()
+        addTapGestureRecognition()
     }
     
-    private func setSelfAttributes() {
+    private func setUpSelfAttributes() {
+        backgroundColor = .white
+        alpha = 0
         layer.cornerRadius = 8
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.55
         layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
         layer.masksToBounds = false
+    }
+    
+    private func setUpIndicatorView() {
+        addSubview(indicatorView)
+        indicatorView.centerY(inView: self, leftAnchor: leftAnchor, paddingLeft: 16)
+        indicatorView.setDimensions(width: 6, height: 6)
+    }
+    
+    private func setUpPlaceholderView() {
+        addSubview(placeholderLabel)
+        placeholderLabel.centerY(inView: self, leftAnchor: indicatorView.rightAnchor, paddingLeft: 20)
+    }
+    
+    private func addTapGestureRecognition() {
+        let tapGesture = UITapGestureRecognizer(
+            target: self,
+            action: #selector(self.handleTap(_:))
+        )
+        addGestureRecognizer(tapGesture)
+    }
+    
+    // MARK: - Selectors
+    
+    @objc func handleTap(_ sender: UIView) {
+        print("Tapping recognoized")
     }
 }
