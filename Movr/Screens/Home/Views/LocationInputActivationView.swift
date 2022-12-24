@@ -21,7 +21,7 @@ class LocationInputActivationView: UIView {
         let label = UILabel()
         label.text = "Where to?"
         label.font = UIFont.systemFont(ofSize: 18)
-        label.textColor = .systemGray5
+        label.textColor = .systemGray2
         return label
     }()
     
