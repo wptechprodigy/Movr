@@ -55,10 +55,7 @@ class LocationInputActivationView: UIView {
         backgroundColor = .white
         alpha = 0
         layer.cornerRadius = 8
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.55
-        layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
-        layer.masksToBounds = false
+        applyShadows()
     }
     
     private func setUpIndicatorView() {

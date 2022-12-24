@@ -16,6 +16,8 @@
 		04A5C308294123340045664D /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A5C307294123340045664D /* UIView+Anchor.swift */; };
 		04F32F342955C2F600625C9E /* LocationInputActivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F32F332955C2F600625C9E /* LocationInputActivationView.swift */; };
 		04F32F362956E03200625C9E /* UIViewController+AnimateIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F32F352956E03200625C9E /* UIViewController+AnimateIn.swift */; };
+		04F32F3829571A0800625C9E /* LocationInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F32F3729571A0800625C9E /* LocationInputView.swift */; };
+		04F32F3A29573D2300625C9E /* UIView+Shadows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F32F3929573D2300625C9E /* UIView+Shadows.swift */; };
 		04FC02872944F7510055C0F8 /* UITextField+textfieldWithPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC02862944F7510055C0F8 /* UITextField+textfieldWithPlaceholder.swift */; };
 		04FC02892944FA7A0055C0F8 /* UIView+InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC02882944FA7A0055C0F8 /* UIView+InputContainerView.swift */; };
 		04FC028B2945C8330055C0F8 /* UIColor+MovrColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC028A2945C8330055C0F8 /* UIColor+MovrColors.swift */; };
@@ -37,6 +39,8 @@
 		04A5C307294123340045664D /* UIView+Anchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
 		04F32F332955C2F600625C9E /* LocationInputActivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputActivationView.swift; sourceTree = "<group>"; };
 		04F32F352956E03200625C9E /* UIViewController+AnimateIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AnimateIn.swift"; sourceTree = "<group>"; };
+		04F32F3729571A0800625C9E /* LocationInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputView.swift; sourceTree = "<group>"; };
+		04F32F3929573D2300625C9E /* UIView+Shadows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadows.swift"; sourceTree = "<group>"; };
 		04FC02862944F7510055C0F8 /* UITextField+textfieldWithPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+textfieldWithPlaceholder.swift"; sourceTree = "<group>"; };
 		04FC02882944FA7A0055C0F8 /* UIView+InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+InputContainerView.swift"; sourceTree = "<group>"; };
 		04FC028A2945C8330055C0F8 /* UIColor+MovrColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+MovrColors.swift"; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				04F32F332955C2F600625C9E /* LocationInputActivationView.swift */,
+				04F32F3729571A0800625C9E /* LocationInputView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -219,6 +224,7 @@
 				04A5C307294123340045664D /* UIView+Anchor.swift */,
 				04FC02882944FA7A0055C0F8 /* UIView+InputContainerView.swift */,
 				04F32F352956E03200625C9E /* UIViewController+AnimateIn.swift */,
+				04F32F3929573D2300625C9E /* UIView+Shadows.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -408,12 +414,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04F32F3A29573D2300625C9E /* UIView+Shadows.swift in Sources */,
 				04A5C2EA2940C3FF0045664D /* LoginViewController.swift in Sources */,
 				04FC0296294623D50055C0F8 /* AuthButton.swift in Sources */,
 				04FC028B2945C8330055C0F8 /* UIColor+MovrColors.swift in Sources */,
 				04FC02992946251E0055C0F8 /* TitleLabel.swift in Sources */,
 				04FC028E2945DA5C0055C0F8 /* SignUpViewController.swift in Sources */,
 				04A5C308294123340045664D /* UIView+Anchor.swift in Sources */,
+				04F32F3829571A0800625C9E /* LocationInputView.swift in Sources */,
 				04A5C2E62940C3FF0045664D /* AppDelegate.swift in Sources */,
 				04F32F362956E03200625C9E /* UIViewController+AnimateIn.swift in Sources */,
 				04FC02B22949299A0055C0F8 /* HomeViewController.swift in Sources */,
