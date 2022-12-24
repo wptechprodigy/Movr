@@ -54,6 +54,7 @@ class HomeViewController: UIViewController {
     
     func configureUI() {
         configureMapView()
+        showWithAnimation(view: self.locationInputActivationView, for: 2)
     }
     
     private func configureMapView() {

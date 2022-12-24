@@ -40,7 +40,7 @@ class LocationInputActivationView: UIView {
         backgroundColor = .white
         
         setSelfAttributes()
-        
+        alpha = 0
         addSubview(indicatorView)
         indicatorView.centerY(inView: self, leftAnchor: leftAnchor, paddingLeft: 16)
         indicatorView.setDimensions(width: 6, height: 6)
