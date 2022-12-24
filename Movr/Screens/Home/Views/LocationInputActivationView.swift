@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol LocationInputActivationViewDelegate: AnyObject {
+    func presentLocationInputView()
+}
+
 class LocationInputActivationView: UIView {
     
     // MARK: - Properties
@@ -24,6 +28,8 @@ class LocationInputActivationView: UIView {
         label.textColor = .systemGray2
         return label
     }()
+    
+    weak var delegate: LocationInputActivationViewDelegate?
     
     // MARK: - Initializers
     
@@ -77,6 +83,6 @@ class LocationInputActivationView: UIView {
     // MARK: - Selectors
     
     @objc func handleTap(_ sender: UIView) {
-        print("Tapping recognoized")
+        delegate?.presentLocationInputView()
     }
 }

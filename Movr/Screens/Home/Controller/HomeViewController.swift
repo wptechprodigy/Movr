@@ -23,6 +23,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         checkIfUserIsLoggedIn()
+        locationInputActivationView.delegate = self
         enableLocationServices()
 //        signOut()
     }
@@ -106,5 +107,11 @@ extension HomeViewController: CLLocationManagerDelegate {
         if status == .authorizedWhenInUse {
             locationManager.requestAlwaysAuthorization()
         }
+    }
+}
+
+extension HomeViewController: LocationInputActivationViewDelegate {
+    func presentLocationInputView() {
+        print("DEBUG: Attempting to present the location input view...")
     }
 }
