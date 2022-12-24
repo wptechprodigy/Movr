@@ -13,9 +13,12 @@ extension UIViewController {
     /// - Parameters:
     ///   - view: view to reveal after some time interval
     ///   - seconds: amount of time to reveal the view
-    internal func showWithAnimation(view: UIView, for seconds: CGFloat) {
-        UIView.animate(withDuration: seconds) {
+    internal func showWithAnimation(view: UIView,
+                                    for seconds: CGFloat,
+                                    completion: ((Bool) -> Void)? = nil
+    ) {
+        UIView.animate(withDuration: seconds, animations: {
             view.alpha = 1
-        }
+        }, completion: completion)
     }
 }
