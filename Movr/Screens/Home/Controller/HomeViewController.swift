@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
     private let locationManager = CLLocationManager()
     
     private let locationInputActivationView = LocationInputActivationView()
+    private let locationInputView = LocationInputView()
     
     // MARK: - Lifecycle
     
@@ -63,7 +64,7 @@ class HomeViewController: UIViewController {
         mapview.frame = view.frame
         
         showAndFollowUserLocation()
-        configureInputActionView()
+        configureLocationInputActivationView()
     }
     
     private func showAndFollowUserLocation() {
@@ -71,11 +72,23 @@ class HomeViewController: UIViewController {
         mapview.userTrackingMode = .follow
     }
     
-    private func configureInputActionView() {
+    private func configureLocationInputActivationView() {
         view.addSubview(locationInputActivationView)
         locationInputActivationView.centerX(inView: view)
         locationInputActivationView.setDimensions(width: view.frame.width - 64, height: 58)
         locationInputActivationView.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 40)
+    }
+    
+    private func configureLocationInputView() {
+        self.locationInputActivationView.alpha = 0
+        view.addSubview(locationInputView)
+        locationInputView.delegate = self
+        locationInputView.anchor(top: view.topAnchor, right: view.rightAnchor,
+                                 left: view.leftAnchor, height: 200)
+        
+        showWithAnimation(view: self.locationInputView, for: 0.5) { _ in
+            print("DEBUG: List of suggestions can now be presented...")
+        }
     }
 }
 
@@ -87,16 +100,13 @@ extension HomeViewController: CLLocationManagerDelegate {
         
         switch locationManager.authorizationStatus {
         case .notDetermined:
-            print("DEBUG: Not determined...")
             locationManager.requestWhenInUseAuthorization()
         case .restricted, .denied:
             break
         case .authorizedAlways:
-            print("DEBUG: Always authorized...")
             locationManager.startUpdatingLocation()
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
         case .authorizedWhenInUse:
-            print("DEBUG: Always when in use...")
             locationManager.requestAlwaysAuthorization()
         @unknown default:
             break
@@ -110,8 +120,23 @@ extension HomeViewController: CLLocationManagerDelegate {
     }
 }
 
+// MARK: - LocationInputActivationViewDelegate
+
 extension HomeViewController: LocationInputActivationViewDelegate {
     func presentLocationInputView() {
-        print("DEBUG: Attempting to present the location input view...")
+        configureLocationInputView()
+    }
+}
+
+// MARK: - LocationInputViewDelegate
+
+extension HomeViewController: LocationInputViewDelegate {
+    func dismissLocationInputView() {
+        UIView.animate(withDuration: 0.3) {
+            self.locationInputView.alpha = 0
+        } completion: { _ in
+            self.showWithAnimation(view: self.locationInputActivationView,
+                                   for: 0.3)
+        }
     }
 }
